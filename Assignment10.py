@@ -5,12 +5,12 @@ import re
 def remover(sentence):
     sentence = str(sentence)
     sentence = re.sub(r'[^\w\s]', '', sentence)
+    sentence = sentence.strip()
+    sentence = sentence.lower()
     return sentence
 
 
 def palindrome_check(string):
-    string = string.strip()
-    string = string.lower()
     string = remover(string)
     if len(string) <= 1:
         return 'yes'
